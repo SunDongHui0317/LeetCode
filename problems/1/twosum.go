@@ -1,4 +1,4 @@
-package main
+package twosum
 
 func twoSum(nums []int, target int) []int {
 	hash := make(map[int]int)

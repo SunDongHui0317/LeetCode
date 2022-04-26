@@ -1,7 +1,13 @@
 package convert
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestConvert(t *testing.T) {
-	t.Log(convert("PAYPALISHIRING", 3))
+	str := "PAYPALISHIRING"
+	num := 3
+	expected := "PAHNAPLSIIGYIR"
+	assert.Equal(t, expected, convert(str, num))
 }

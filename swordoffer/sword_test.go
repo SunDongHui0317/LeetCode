@@ -36,7 +36,7 @@ func TestFindNumberIn2DArray(t *testing.T) {
 
 func TestReplaceSpace(t *testing.T) {
 	s := "We are happy."
-	expected :="We%20are%20happy."
+	expected := "We%20are%20happy."
 	assert.Equal(t, expected, replaceSpace(s))
 }
 
@@ -46,29 +46,29 @@ func TestReversePrint(t *testing.T) {
 		Next: &ListNode{
 			Val: 3,
 			Next: &ListNode{
-				Val: 2,
+				Val:  2,
 				Next: nil,
 			},
 		},
 	}
 	expected := []int{
-		2,3,1,
+		2, 3, 1,
 	}
 	assert.Equal(t, expected, reversePrint(&head))
 }
 
 func TestBuildTree(t *testing.T) {
 	pre := []int{
-		3,9,20,15,7,
+		3, 9, 20, 15, 7,
 	}
 	in := []int{
-		9,3,15,20,7,
+		9, 3, 15, 20, 7,
 	}
 	expected := TreeNode{
 		Val: 3,
 		Left: &TreeNode{
-			Val: 9,
-			Left: nil,
+			Val:   9,
+			Left:  nil,
 			Right: nil,
 		},
 		Right: &TreeNode{
@@ -81,5 +81,82 @@ func TestBuildTree(t *testing.T) {
 			},
 		},
 	}
-	assert.Equal(t, &expected, buildTree(pre,in))
+	assert.Equal(t, &expected, buildTree(pre, in))
+}
+
+func TestFib(t *testing.T) {
+	assert.Equal(t, 3, fib(4))
+}
+
+func TestNumWays1(t *testing.T) {
+	assert.Equal(t, 2, numWays(2))
+}
+
+func TestNumWays2(t *testing.T) {
+	assert.Equal(t, 21, numWays(7))
+}
+
+func TestNumWays3(t *testing.T) {
+	assert.Equal(t, 1, numWays(0))
+}
+
+func TestMinArray(t *testing.T) {
+	numbers := []int{3, 4, 5, 1, 2}
+	assert.Equal(t, 1, minArray(numbers))
+}
+
+func TestMinArray1(t *testing.T) {
+	numbers := []int{3, 3, 3, 3, 3}
+	assert.Equal(t, 3, minArray(numbers))
+}
+
+func TestExist(t *testing.T) {
+	board := [][]byte{
+		{
+			'A', 'B', 'C', 'E',
+		}, {
+			'S', 'F', 'C', 'S',
+		}, {
+			'A', 'D', 'E', 'E',
+		},
+	}
+	word := "ABCCED"
+	assert.Equal(t, true, exist(board, word))
+}
+
+func TestExist1(t *testing.T) {
+	board := [][]byte{
+		{
+			'a', 'b',
+		}, {
+			'c', 'd',
+		},
+	}
+	word := "abcd"
+	assert.Equal(t, false, exist(board, word))
+}
+
+func TestMovingCount(t *testing.T) {
+	expected := 3
+	assert.Equal(t, expected, movingCount(2, 3, 1))
+}
+
+func TestMovingCount1(t *testing.T) {
+	expected := 1
+	assert.Equal(t, expected, movingCount(3, 1, 0))
+}
+
+func TestCuttingRope(t *testing.T) {
+	expected := 1
+	assert.Equal(t, expected, cuttingRope(2))
+}
+
+func TestCuttingRope1(t *testing.T) {
+	expected := 36
+	assert.Equal(t, expected, cuttingRope(10))
+}
+
+func TestCuttingRope2(t *testing.T) {
+	expected := 36
+	assert.Equal(t, expected, cuttingRope1(10))
 }

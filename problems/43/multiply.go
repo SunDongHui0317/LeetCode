@@ -8,26 +8,25 @@ func multiply(num1 string, num2 string) string {
 	if num1 == "0" || num2 == "0" {
 		return "0"
 	}
-	m, n := len(num1), len(num2)
-	ansArr := make([]int, m+n)
-	for i := m - 1; i >= 0; i-- {
-		x := int(num1[i]) - '0'
-		for j := n - 1; j >= 0; j-- {
-			y := int(num2[j] - '0')
-			ansArr[i+j+1] += x * y
+	answerArr := make([]int, len(num1)+len(num2))
+	for index1, n1 := range num1 {
+		for index2, n2 := range num2 {
+			answerArr[index1+index2+1] += int(n1-'0') * int(n2-'0')
 		}
 	}
-	for i := m + n - 1; i > 0; i-- {
-		ansArr[i-1] += ansArr[i] / 10
-		ansArr[i] %= 10
+	for i := len(answerArr)-1; i > 0; i-- {
+		if answerArr[i] >= 10 {
+			answerArr[i-1] += answerArr[i] / 10
+			answerArr[i] %= 10
+		}
 	}
+
 	ans := ""
-	idx := 0
-	if ansArr[0] == 0 {
-		idx = 1
-	}
-	for ; idx < m+n; idx++ {
-		ans += strconv.Itoa(ansArr[idx])
+	for index, v := range answerArr {
+		if index == 0 && v == 0{
+			continue
+		}
+		ans += strconv.Itoa(v)
 	}
 	return ans
 }

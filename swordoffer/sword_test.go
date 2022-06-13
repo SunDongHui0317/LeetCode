@@ -160,3 +160,11 @@ func TestCuttingRope2(t *testing.T) {
 	expected := 36
 	assert.Equal(t, expected, cuttingRope2(10))
 }
+
+func TestHammingWeight(t *testing.T) {
+	assert.Equal(t, 31, hammingWeight(4294967293))
+}
+
+func TestMyPow(t *testing.T) {
+	t.Log(myPow(2.0, -3))
+}

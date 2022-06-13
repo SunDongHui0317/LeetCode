@@ -148,15 +148,15 @@ func TestMovingCount1(t *testing.T) {
 
 func TestCuttingRope(t *testing.T) {
 	expected := 1
-	assert.Equal(t, expected, cuttingRope(2))
+	assert.Equal(t, expected, cuttingRope2(2))
 }
 
 func TestCuttingRope1(t *testing.T) {
 	expected := 36
-	assert.Equal(t, expected, cuttingRope(10))
+	assert.Equal(t, expected, cuttingRope2(10))
 }
 
 func TestCuttingRope2(t *testing.T) {
 	expected := 36
-	assert.Equal(t, expected, cuttingRope1(10))
+	assert.Equal(t, expected, cuttingRope2(10))
 }

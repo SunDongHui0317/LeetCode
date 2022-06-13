@@ -49,3 +49,15 @@ func max(i int, j int) int {
 	}
 	return j
 }
+
+func cuttingRope2(n int) int {
+	if n <= 3 {
+		return n - 1
+	}
+	r := 1
+	for n > 4 {
+		r = r * 3 % 1000000007
+		n -= 3
+	}
+	return r * n % 1000000007
+}

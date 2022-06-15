@@ -166,5 +166,32 @@ func TestHammingWeight(t *testing.T) {
 }
 
 func TestMyPow(t *testing.T) {
-	t.Log(myPow(2.0, -3))
+	t.Log(myPow(10.0, 5))
+}
+
+func TestPrintNumbers(t *testing.T) {
+	expected := []int{
+		1, 2, 3, 4, 5, 6, 7, 8, 9,
+	}
+	assert.Equal(t, true, StringSliceEqualBCE(expected, printNumbers(1)))
+	//t.Log(printNumbers(1))
+}
+
+func StringSliceEqualBCE(a, b []int) bool {
+	if len(a) != len(b) {
+		return false
+	}
+
+	if (a == nil) != (b == nil) {
+		return false
+	}
+
+	b = b[:len(a)]
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+
+	return true
 }

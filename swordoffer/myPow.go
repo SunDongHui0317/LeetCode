@@ -1,5 +1,7 @@
 package swordoffer
 
+import "fmt"
+
 func myPow(x float64, n int) float64 {
 	if n > 0 {
 		return quickMul(x, n)
@@ -12,8 +14,10 @@ func quickMul(x float64, n int) float64 {
 	for n > 0 {
 		if d := n % 2; d == 1 {
 			ans *= x
+			fmt.Println("ams: ", ans)
 		}
 		x *= x
+		fmt.Println("x: ", x)
 		n /= 2
 	}
 	return ans

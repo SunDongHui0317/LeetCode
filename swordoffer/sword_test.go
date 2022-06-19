@@ -1,8 +1,9 @@
 package swordoffer
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestFindRepeatNumber(t *testing.T) {

@@ -196,3 +196,11 @@ func StringSliceEqualBCE(a, b []int) bool {
 
 	return true
 }
+
+func TestIsNumber(t *testing.T) {
+	assert.Equal(t, true, isNumber("0"))
+}
+
+func TestIsNumber1(t *testing.T) {
+	assert.Equal(t, false, isNumber("e"))
+}

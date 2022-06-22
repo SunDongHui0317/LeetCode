@@ -204,3 +204,10 @@ func TestIsNumber(t *testing.T) {
 func TestIsNumber1(t *testing.T) {
 	assert.Equal(t, false, isNumber("e"))
 }
+
+func TestExchange(t *testing.T) {
+	nums := []int{
+		1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+	}
+	t.Log(exchange2(nums))
+}
